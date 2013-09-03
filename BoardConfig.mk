@@ -1,4 +1,5 @@
 # Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2013 Emmanuel Utomi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,8 +25,11 @@
 # variant, so that it gets overwritten by the parent (which goes
 # against the traditional rules of inheritance).
 
-# inherit from common msm8660
+# Inherit from common msm8660
 -include device/htc/msm8660-common/BoardConfigCommon.mk
+
+# Inherit Recovery flags
+-include device/htc/doubleshot/recovery/BoardConfigRecovery.mk
 
 # Audio
 BOARD_HAVE_HTC_AUDIO := true
@@ -71,7 +75,6 @@ BOARD_USES_LEGACY_RIL := true
 # Filesystem
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16776192
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 838859776
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1252770816
 BOARD_FLASH_BLOCK_SIZE := 262144
